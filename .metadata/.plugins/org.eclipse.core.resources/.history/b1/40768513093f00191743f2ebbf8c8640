@@ -1,0 +1,12 @@
+import java.util.*;
+import java.lang.reflect.*;
+
+
+public class Inspector {
+	public Inspector() {}
+	
+	public void inspect(Object obj, boolean recursive)
+	{
+		
+	}
+}

@@ -1,0 +1,32 @@
+/*
+ * code that are have top and bottom "**********" border is 
+ * taken from the ObjectInspector class. 
+ */
+
+
+import java.util.*;
+import java.lang.reflect.*;
+
+
+public class Inspector {
+	public Inspector() {}
+	
+	public void inspect(Object obj, boolean recursive)
+	{
+		
+		//******************************************************************
+		Vector objectsToInspect = new Vector();
+		Class ObjClass = obj.getClass();
+
+		System.out.println("inside inspector: " + obj + " (recursive = "+recursive+")");
+		
+		//inspect the current class
+		inspectFields(obj, ObjClass,objectsToInspect);
+		
+		if(recursive)
+		    inspectFieldClasses( obj, ObjClass, objectsToInspect, recursive);
+		//******************************************************************
+		   
+	}
+	
+}

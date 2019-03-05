@@ -1,0 +1,34 @@
+/*
+ * code that are have top and bottom "**********" border is 
+ * taken from the ObjectInspector class. 
+ * 
+ * There are a lot of documentation in this class due to my 
+ * first experience of using reflection 
+ */
+
+
+import java.util.*;
+import java.lang.reflect.*;
+
+
+public class Inspector implements ObjectInspector{
+	
+	
+	public Inspector() {}
+	
+	
+	
+	public void inspect(Object obj, boolean recursive)
+	{
+		
+		//******************************************************************
+
+		//******************************************************************
+		   
+	}
+	
+
+	 
+	 
+	 
+}

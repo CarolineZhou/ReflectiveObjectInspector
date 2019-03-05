@@ -7,5 +7,6 @@
 <listEntry value="1"/>
 </listAttribute>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="Asst2TestDriver"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="Inspector"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="ReflectiveObjectInspector"/>
 </launchConfiguration>
