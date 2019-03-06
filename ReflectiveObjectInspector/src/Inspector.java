@@ -45,15 +45,13 @@ public class Inspector extends ObjectInspector{
 		inspectMethods(obj,ObjClass, objectsToInspect);
 		
 		//inspect the current class
-		//inspectFields(obj, ObjClass,objectsToInspect);
+		System.out.println("------------------------------------------------------");
+		inspectFields(obj, ObjClass,objectsToInspect);
 		
-
-		
-
-		
-		/*if(recursive)
+		System.out.println("------------------------------------------------------");
+		if(recursive)
 		    inspectFieldClasses( obj, ObjClass, objectsToInspect, recursive);
-		   	*/
+		   
 	}
 	
 	
@@ -75,9 +73,9 @@ public class Inspector extends ObjectInspector{
 		 
 		 Enumeration e = objectsToInspect.elements();
 		 while(e.hasMoreElements())
-		 {
+		 {	
 			 Field f = (Field) e.nextElement();
-			 System.out.println("Inspecting Field: " + f.getName() );
+			 System.out.println("Inspecting Field Object: " + f.getName() );
 			
 			 /*
 			  * while all the objects to inspect item should be object
@@ -91,7 +89,8 @@ public class Inspector extends ObjectInspector{
 			 }
 			catch(Exception exp) 
 			{ 
-				exp.printStackTrace(); //check what happened
+				break;
+				//exp.printStackTrace();
 			}
 		 }
 	 }
@@ -106,13 +105,15 @@ public class Inspector extends ObjectInspector{
 	  */
 	 private void inspectFields(Object obj,Class ObjClass,Vector objectsToInspect)
 	 {
+		 int count = 0;
 		 /* if all the class object's fields length is more than one;
 		  * getDeclaredFields() include all field in the current class
 		  * no matter the accessibility
 		  */
-		 if(ObjClass.getDeclaredFields().length >= 1)
+		 for( int i = 0; i < ObjClass.getDeclaredFields().length; i++)
 		 {
-			 Field f = ObjClass.getDeclaredFields()[0];										// f is a pointer of first element in the fields
+			 
+			 Field f = ObjClass.getDeclaredFields()[i];										// f is a pointer of first element in the fields
 			 int mod = f.getModifiers();
 			 String retval = Modifier.toString(mod);
 			 
@@ -124,28 +125,29 @@ public class Inspector extends ObjectInspector{
 			  */
 			 if(! f.getType().isPrimitive() ) 
 				 objectsToInspect.addElement( f );
-			
-			 if(f.getType().isPrimitive()) {
+			 else {
+				 count++;
+				 System.out.println("  *Field " + (count) + "*");
 				 try
 				 {
-					 System.out.println("Field: " + f.getName() + " = " + f.get(obj));
+						 System.out.println("Field: " + f.getName() + " = " + f.get(obj));
 				 }
 				 catch(Exception e) {}   
+				
+				 
+				 try
+				 {
+					 System.out.println("Field type: " + f.getType());
+				 }
+				 catch(Exception e) {}
+				 
+				 
+				 try
+				 {
+					 System.out.println("Field modifier: " + retval);
+				 }
+				 catch(Exception e) {}
 			 }
-			 
-			 try
-			 {
-				 System.out.println("Field type: " + f.getType());
-			 }
-			 catch(Exception e) {}
-			 
-			 
-			 try
-			 {
-				 System.out.println("Field modifier: " + retval);
-			 }
-			 catch(Exception e) {}
-			
 			 
 		 }
 
