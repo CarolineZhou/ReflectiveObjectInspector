@@ -221,7 +221,7 @@ public class Inspector extends ObjectInspector{
 				Constructor c = ObjClass.getDeclaredConstructors()[0];
 				c.setAccessible(true);
 				
-				System.out.println("  *CONSTRUCTOR  " + (i+1) + "*");
+				System.out.println("CONSTRUCTOR" + i);
 				try
 				 {
 					 System.out.println("Constructor: " + c.getName());
