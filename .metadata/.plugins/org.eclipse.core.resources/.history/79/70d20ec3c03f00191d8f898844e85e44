@@ -116,7 +116,7 @@ public class Inspector extends ObjectInspector{
 				 catch(Exception e) {}  
 			}
 			
-			int mod = c.getModifiers();
+			int mod = f.getModifiers();
 			String retval = Modifier.toString(mod);
 			try
 			 {

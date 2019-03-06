@@ -95,38 +95,6 @@ public class Inspector extends ObjectInspector{
 		
 		//inspect the constructors
 		
-		for(int i = 0; i < ObjClass.getDeclaredConstructors().length; i++)
-		{
-			Constructor c = ObjClass.getDeclaredConstructors()[0];
-			c.setAccessible(true);
-			
-			try
-			 {
-				 System.out.println("Constructor: " + c.getName());
-			 }
-			 catch(Exception e) {}  
-			
-			Class[] param = c.getParameterTypes();
-			for(int x = 0; x < param.length; x++) 
-			{
-				try
-				 {
-					 System.out.println("Constructor Parameter: " + param[x].getName());
-				 }
-				 catch(Exception e) {}  
-			}
-			
-			int mod = c.getModifiers();
-			String retval = Modifier.toString(mod);
-			try
-			 {
-				 System.out.println("Constructor Modifier: " + retval);
-			 }
-			 catch(Exception e) {}
-			
-			
-		}
-		
 		
 		if(recursive)
 		    inspectFieldClasses( obj, ObjClass, objectsToInspect, recursive);
