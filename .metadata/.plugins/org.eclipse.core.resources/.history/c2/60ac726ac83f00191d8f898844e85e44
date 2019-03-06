@@ -162,7 +162,7 @@ public class Inspector extends ObjectInspector{
 		//inspect the method in current class		
 			for(int y = 0; y < ObjClass.getDeclaredMethods().length; y++)
 			{
-				System.out.println("  *Method " + (y+1) + "*");
+				System.out.println(" Method " + (y+1));
 				Method m = ObjClass.getDeclaredMethods()[y];
 				m.setAccessible(true);
 				
@@ -179,7 +179,7 @@ public class Inspector extends ObjectInspector{
 				{
 					try
 					 {
-						 System.out.println("Exception: " + exceptions[i].getName());
+						 System.out.println("Exception " + i + ": " + exceptions[i].getName());
 					 }
 					 catch(Exception e) {}  
 				}

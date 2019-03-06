@@ -179,7 +179,7 @@ public class Inspector extends ObjectInspector{
 				{
 					try
 					 {
-						 System.out.println("Exception: " + exceptions[i].getName());
+						 System.out.println("Exception " + (i+1) + ": " + exceptions[i].getName());
 					 }
 					 catch(Exception e) {}  
 				}

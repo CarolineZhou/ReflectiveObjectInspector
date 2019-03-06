@@ -34,7 +34,7 @@ public class Inspector extends ObjectInspector{
 		//name of interfaces current class implements
 		for(int i = 0; i < interfaces.length ; i++)
 		{
-			System.out.println("Interface " +  (1+i) + ": " + interfaces[i].getName());
+			System.out.println("Interface " +  i + ": " + interfaces[i].getName());
 		}
 		
 		//inspect current class' constructors
@@ -42,7 +42,7 @@ public class Inspector extends ObjectInspector{
 		System.out.println("------------------------------------------------------");
 		
 		//inspect current class' methods
-		inspectMethods(obj,ObjClass, objectsToInspect);
+		//inspectMethods(obj,ObjClass, objectsToInspect);
 		
 		//inspect the current class
 		//inspectFields(obj, ObjClass,objectsToInspect);
@@ -162,7 +162,6 @@ public class Inspector extends ObjectInspector{
 		//inspect the method in current class		
 			for(int y = 0; y < ObjClass.getDeclaredMethods().length; y++)
 			{
-				System.out.println("  *Method " + (y+1) + "*");
 				Method m = ObjClass.getDeclaredMethods()[y];
 				m.setAccessible(true);
 				
@@ -179,7 +178,7 @@ public class Inspector extends ObjectInspector{
 				{
 					try
 					 {
-						 System.out.println("Exception: " + exceptions[i].getName());
+						 System.out.println("Exception " + i + ": " + exceptions[i].getName());
 					 }
 					 catch(Exception e) {}  
 				}
