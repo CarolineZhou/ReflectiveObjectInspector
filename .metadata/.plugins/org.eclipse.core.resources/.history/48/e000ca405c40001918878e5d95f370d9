@@ -1,0 +1,22 @@
+package a2;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.Vector;
+
+import org.junit.jupiter.api.Test;
+
+class InspectorTest {
+
+	@Test
+	void inspectMethodGeneral1() {
+		ClassA obj = new ClassA();
+		Vector objectsToInspect = new Vector();
+		Class ObjClass = obj.getClass(); 
+		
+		Inspector inspec = new Inspector();
+		inspec.inspectMethods(obj, ObjClass, objectsToInspect);
+		
+	}
+
+}
